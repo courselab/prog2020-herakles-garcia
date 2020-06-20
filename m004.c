@@ -35,7 +35,7 @@ int decimal (char *b)
   int base=1;
   n = strlen (b);
   
-  for (i = n-1; n >= 0 ; i--)
+  for (i = n-1; i >= 0 ; i--)
   {
      if (b[i]=='1')
      {
