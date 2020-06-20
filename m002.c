@@ -31,10 +31,6 @@ void sort (int *a, int *b, int *c)
 int x;
 int y;
 int z;
-
-   x = *a;
-   y = *b;
-   z = *b;
    
 if (x<=y && x<=z)
 {
@@ -73,7 +69,6 @@ else
    }
    
    else
-  
    {
       *a = z;      //se z for o menor dos três, ocupará a posição a
       
