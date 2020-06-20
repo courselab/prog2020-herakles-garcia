@@ -32,11 +32,15 @@ int x;
 int y;
 int z;
    
-if (x<=y && x<=z)
+   x = *a;
+   y = *b;
+   z = *c;
+      
+if (x <= y && x <= z)
 {
    *a = x;           //se x for o menor dos três, ocupará a posição a
    
-      if (y<=z)
+      if (y <= z)
       {
          *b = y;     //se y for o segundo menor, ocupará a posição b
          *c = z;     //se z for o maior, ocupará a posição c
@@ -51,11 +55,11 @@ if (x<=y && x<=z)
          
 else
 {
-   if (y<=x && y<=z)   
+   if (y <= x && y <= z)   
    {
       *a = y;        //se y for o menor dos três, ocupará a posição a
       
-      if (x<=z)      
+      if (x <= z)      
       {
          *b = x;     //se x for o segundo menor, ocupará a posição b
          *c = z;     //se z for o maior, ocupará a posição c
@@ -69,10 +73,10 @@ else
    }
    
    else
-   {
+   
       *a = z;      //se z for o menor dos três, ocupará a posição a
       
-      if(x<=y)
+      if(x <= y)
       {
          *b = x;   //se x for o segundo menor, ocupará a posição b
          *c = y;   //se y for o maior, ocupará a posição c
@@ -85,7 +89,7 @@ else
       }
    }
 }   
-}
+
    
 /* Do not edit this function. */
 
