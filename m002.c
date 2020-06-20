@@ -53,42 +53,43 @@ if (x <= y && x <= z)
       }
 }
          
-else
-{
-   if (y <= x && y <= z)   
-   {
-      *a = y;        //se y for o menor dos três, ocupará a posição a
+	else 
       
-      if (x <= z)      
-      {
-         *b = x;     //se x for o segundo menor, ocupará a posição b
-         *c = z;     //se z for o maior, ocupará a posição c
-      }
-      
-      else
-      {
-         *b = z;    //caso contrário, x é o maior, então x ocupará a posição c
-         *c = x;
-      }
-   }
-   
-   else
-   
-      *a = z;      //se z for o menor dos três, ocupará a posição a
-      
-      if(x <= y)
-      {
-         *b = x;   //se x for o segundo menor, ocupará a posição b
-         *c = y;   //se y for o maior, ocupará a posição c
-      }
-      
-      else
-      {
-         *b = y;  
-         *c = x;  //caso contrário, x é o maior, então x ocupará a posição c
-      }
-   }
-}   
+	if (y <= x && y <= z)
+	{
+		*a = y;
+		
+		if (x <= z)
+		{
+			*b = x;
+			*c = z;
+		}
+		
+		else
+		{
+			*b = z;
+			*c = x;
+		}
+	}
+	
+	else
+	{
+		*a = z;
+		
+		if (x <= y)
+		{
+			*b = x;
+			*c = y;
+		}
+		
+		else
+		{
+			*b = y;
+			*c = z;
+		}
+	}	
+}
+  
 
    
 /* Do not edit this function. */
