@@ -27,22 +27,23 @@ int is_prime (int a)
     int n;
     n=0;
     
-    for (i==2; i<=(a/2); i++) //o menor divisor possível de um número não-primo n é 2. Logo, o maior divisor possível será n/2, de modo que não é necessário testar além desse valor.
+    for (i=2; i<=(a/2); i++) //o menor divisor possível de um número não-primo n é 2. Logo, o maior divisor possível será n/2, de modo que não é necessário testar além desse valor.
     {
         if (a%i == 0)
         {
             n++;
+            break;
         }
     }
     
-    if (n>0)
-    {
-        return 0;
-    }
-    else
-    {
+    if (n==0)
+        {
         return 1;
-    }
+        }
+    else
+        {
+        return 0;
+        }
  
 }
 
