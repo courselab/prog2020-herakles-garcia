@@ -25,28 +25,24 @@ int is_prime (int a)
 {
     int i;
     int n;
-    int primo;
     n=0;
     
-    for (i=2; i<=(a/2); i++) //o menor divisor possível de um número não-primo n é 2. Logo, o maior divisor possível será n/2, de modo que não é necessário testar além desse valor.
+    for (i=1; i<=a; i++) 
     {
         if (a%i == 0)
         {
             n++;
-            break;
         }
     }
     
-    if (n == 0)
+    if (n==2)
         {
-        primo = 1;
+        return 1;
         }
     else
         {
-        primo = 0;
+        return 0;
         }
- 
- return primo;
  
 }
 
