@@ -50,7 +50,7 @@ int is_prime (int a)
  
 }
 
-#define USAGE "m003 5\n"
+#define USAGE "m003 <num>\n"
 
 /* Do not edit this function. */
 
