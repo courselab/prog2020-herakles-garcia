@@ -37,8 +37,12 @@ int decimal (char *b)
   
   for (i = n-1; n >= 0 ; i--)
   {
-     count = count + (b[i]-'1'+1)*base;
-     base = base*2;
+     if (b[i]=='1')
+     {
+        count = count + base;
+     }
+     
+     base = base * 2;
   }
   return count;
 }
