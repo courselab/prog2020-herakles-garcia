@@ -45,6 +45,7 @@ if (x<=y && x<=z)
          *b = y;     //se y for o segundo menor, ocupará a posição b
          *c = z;     //se z for o maior, ocupará a posição c
       }
+   
       else
       {
          *b = z;     //caso contrário, y é o maior, então y ocupará a posição c
