@@ -28,38 +28,35 @@
 void sort (int *a, int *b, int *c)
 {
 
-int x;
-int y;
-int z;
+int x, y, z;
    
    x = *a;
    y = *b;
    z = *c;
       
-if (x <= y && x <= z)
+if (x < y && x < z)
 {
-   *a = x;           //se x for o menor dos três, ocupará a posição a
+   *a = x;          
    
-      if (y <= z)
+      if (y < z)
       {
-         *b = y;     //se y for o segundo menor, ocupará a posição b
-         *c = z;     //se z for o maior, ocupará a posição c
+         *b = y;   
+         *c = z;    
       }
    
       else
       {
-         *b = z;     //caso contrário, y é o maior, então y ocupará a posição c
+         *b = z;  
          *c = y;
       }
 }
          
 	else 
-      
-	if (y <= x && y <= z)
+	if (y < x && y < z)
 	{
 		*a = y;
 		
-		if (x <= z)
+		if (x < z)
 		{
 			*b = x;
 			*c = z;
@@ -76,7 +73,7 @@ if (x <= y && x <= z)
 	{
 		*a = z;
 		
-		if (x <= y)
+		if (x < y)
 		{
 			*b = x;
 			*c = y;
