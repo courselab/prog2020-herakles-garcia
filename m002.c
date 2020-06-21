@@ -27,67 +27,29 @@
 
 void sort (int *a, int *b, int *c)
 {
-
-int x, y, z;
-   
-   x = *a;
-   y = *b;
-   z = *c;
-      
-if (x < y && x < z)
-{
-   *a = x;          
-   
-      if (y < z)
-      {
-         *b = y;   
-         *c = z;    
-      }
-   
-      else
-      {
-         *b = z;  
-         *c = y;
-      }
+    int i;        //variável auxiliar
+    
+    if (*a>*c)    //se o valor armazenado em *a for maior que o valor armazenado em *c, trocar eles de lugar usando o i.
+    {
+        i = *c;
+        *c = *a;
+        *a = i;
+    }
+    
+    if (*a>*b)   //se o valor armazenado em *a for maior que o valor armazenado em *b, trocar eles de lugar usando o i.
+    {
+        i = *b;
+        *b = *a;
+        *a = i;
+    }
+    
+    if (*b>*c)   //se o valor armazenado em *b for maior que o valor armazenado em *c, trocar eles de lugar usando o i.
+    {
+        i = *c;
+        *c = *b;
+        *b = i;
+    }
 }
-         
-	else 
-	if (y < x && y < z)
-	{
-		*a = y;
-		
-		if (x < z)
-		{
-			*b = x;
-			*c = z;
-		}
-		
-		else
-		{
-			*b = z;
-			*c = x;
-		}
-	}
-	
-	else
-	{
-		*a = z;
-		
-		if (x < y)
-		{
-			*b = x;
-			*c = y;
-		}
-		
-		else
-		{
-			*b = y;
-			*c = z;
-		}
-	}	
-}
-  
-
    
 /* Do not edit this function. */
 
