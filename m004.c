@@ -40,6 +40,12 @@ int decimal (char *b)
      if (b[i] == '1')
      {
         count = count + base;
+        base = base * 2;
+     }
+     
+     if (b[i] == '0')
+     {
+         base = base * 2;
      }
      
      if (b[i] != 0 || b[i] != 1)
@@ -47,7 +53,6 @@ int decimal (char *b)
          break;
      }
      
-     base = base * 2;
   }
   return count;
 }
