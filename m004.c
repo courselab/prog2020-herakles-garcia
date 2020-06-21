@@ -35,11 +35,16 @@ int decimal (char *b)
   int base=1;
   n = strlen (b);
   
-  for (i = n-1; i >= 0 ; i--)
+  for (i = 0; i <= n - 1 ; i++)
   {
-     if (b[i]=='1')
+     if (b[i] == '1')
      {
         count = count + base;
+     }
+     
+     if (b[i] != 0 || b[i] != 1)
+     {
+         break;
      }
      
      base = base * 2;
