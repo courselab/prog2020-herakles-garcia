@@ -31,8 +31,8 @@ enum {sun, mon, tue, wed, thu, fri, sat};
 int day_of_week (int day, int month)
 {
   int i = 0;
-  int days[12];
-  int sum;
+  int sum = 0;
+  int days[12]; //qtde. de dias em cada mês
 
   days[0]=31;
   days[1]=29;
