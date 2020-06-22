@@ -30,7 +30,66 @@ enum {sun, mon, tue, wed, thu, fri, sat};
 
 int day_of_week (int day, int month)
 {
-  return sun;
+  int i = 0;
+  int days[12];
+  int sum;
+
+  days[0]=31;
+  days[1]=29;
+  days[2]=31;
+  days[3]=30;
+  days[4]=31;
+  days[5]=30;
+  days[6]=31;
+  days[7]=31;
+  days[8]=30;
+  days[9]=31;
+  days[10]=30;
+  days[11]=31;
+
+  for (i=0; i < (month-1); i++) //determina a quantidade de dias do ano que passaram até o início do mês especificado
+  {
+    sum = sum + days[i];       
+  }
+
+  sum = sum + day; //soma a quantidade de dias que passaram do mês especificado
+
+//o primeiro dia de 2020 foi uma quarta-feira (wednesday), logo, (sum%7 - 1) = 0 indica que o dia é uma quarta-feira, = 1 indica uma quinta, etc.
+
+switch ((sum%7)-1)
+  {
+    case 6:
+      return tue;
+      break;
+
+    case 5:
+      return mon;
+      break;
+
+    case 4:
+      return sun;
+      break;
+    
+    case 3:
+      return sat;
+      break;
+
+    case 2:
+      return fri;
+      break;
+
+    case 1:
+      return thu;
+      break;
+    
+    case 0:
+      return wed;
+      break;
+
+    default:
+    return 0;
+      break;
+  }
 }
 
 /* Do not edit function main. */
