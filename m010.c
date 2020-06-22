@@ -54,36 +54,36 @@ int day_of_week (int day, int month)
 
   sum = sum + day; //soma a quantidade de dias que passaram do mês especificado
 
-//o primeiro dia de 2020 foi uma quarta-feira (wednesday), logo, (sum%7 - 1) = 0 indica que o dia é uma quarta-feira, = 1 indica uma quinta, etc.
+//o primeiro dia de 2020 foi uma quarta-feira
 
-switch ((sum%7)-1)
+switch (sum%7)
   {
     case 6:
-      return tue;
-      break;
-
-    case 5:
       return mon;
       break;
 
-    case 4:
+    case 5:
       return sun;
+      break;
+
+    case 4:
+      return sat;
       break;
     
     case 3:
-      return sat;
-      break;
-
-    case 2:
       return fri;
       break;
 
-    case 1:
+    case 2:
       return thu;
+      break;
+
+    case 1:
+      return wed;
       break;
     
     case 0:
-      return wed;
+      return tue;
       break;
 
     default:
