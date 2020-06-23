@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define USAGE "m011 <filename>\n"
+#define USAGE "m011 i011.txt\n"
 
 /* Return the number of words in ascii text file 'filename'.*/
 
@@ -24,23 +24,30 @@ int wordcount (char *filename)
 {
     FILE *fp;
     int n;
-    int count = 0;
+    int count = 0; //contagem de palavras
     int word = 0; //variável auxiliar para checar se é palavra ou espaço 
     
     fp = fopen (filename, "r");
     
      while ((n = fgetc(fp)) != EOF) //loop para checar até chegar ao final do arquivo
      {
-         if ((word == 0 && n == 32) || (word == 0 && n == 10)) 
-         //se for encontrado um espaço, mudar a variável auxiliar para 1, indicando a presença de um espaço ou quebra de linha, e adicionar 1 à contagem de palavras 
+         if ((word == 0 && n == 32) || (word == 0 && n == 10))
+            
+            /* Se o caractere anterior não for um espaço ou quebra de linha, mudar a variável de checagem para 1
+            e adicionar 1 à contagem de palavras. */
+               
          {
             count++;
             word = 1;
          }
 
          else
+            
+            /* Se o caractere anterior for um espaço ou quebra de linha, mudar a variável de checagem para 0 de novo,
+            até chegar ao próximo espaço, quebra de linha ou fim do arquivo. */
+            
          {
-           if (word == 1 && n != 32)
+           if ((word == 1 && n != 32) || (word == 1 && n != 10))
            {
              word = 0;
            }
