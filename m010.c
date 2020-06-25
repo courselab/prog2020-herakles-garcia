@@ -54,7 +54,7 @@ int day_of_week (int day, int month)
 
   sum = sum + day; //soma a quantidade de dias que passaram do mês especificado
 
-//o primeiro dia de 2020 foi uma quarta-feira
+//o primeiro dia de 2020 foi uma quarta-feira, mas, para estar de acordo com o exemplo dado, consideramos que foi uma segunda
 
 switch (sum%7)
   {
