@@ -51,7 +51,7 @@ int wordcount (char *filename)
            word = 0;
          }
         
-        if ((n != 0)
+        if ((n = EOF)
          {
            break;
          }
