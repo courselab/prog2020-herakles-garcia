@@ -29,6 +29,8 @@ int wordcount (char *filename)
     
     fp = fopen (filename, "r");
     
+    n = fgetc(fp);
+   
      while (1) //loop para checar até chegar ao final do arquivo
      {
          if ((word == 0 && n == 32) || (word == 0 && n == 10))
@@ -49,7 +51,7 @@ int wordcount (char *filename)
            word = 0;
          }
         
-        if ((n = fgetc(fp)) != 0)
+        if ((n != 0)
          {
            break;
          }
