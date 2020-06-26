@@ -23,12 +23,13 @@
 int wordcount (char *filename)
 {
     FILE *fp;
+    int n;
     int count = 0; //contagem de palavras
     int word = 0; //variável auxiliar para checar se é palavra ou espaço 
     
     fp = fopen (filename, "r");
     
-    for (count = 0; (n = fgetc(fp)) != EOF; n++) //loop para checar até chegar ao final do arquivo
+     while (1) //loop para checar até chegar ao final do arquivo
      {
          if ((word == 0 && n == 32) || (word == 0 && n == 10))
             
@@ -40,6 +41,19 @@ int wordcount (char *filename)
             word = 1;
          }
 
+            /* Se o caractere anterior for um espaço ou quebra de linha, mudar a variável de checagem para 0 de novo,
+            até chegar ao próximo espaço, quebra de linha ou fim do arquivo. */
+            
+         if ((word == 1 && n != 32) || (word == 1 && n != 10))
+         {
+           word = 0;
+         }
+        
+        if ((n = fgetc(fp)) != 0)
+         {
+           break;
+         }
+        
      }
     
   return count;
