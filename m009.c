@@ -23,8 +23,23 @@
 
 /* Sort the first 'n' integers values in 'vector'. */
 
+//algoritmo: bubble sort
+
 void sort (int* vector, int n)
 {
+  int i, k, aux;                              //duas variáveis de iteração e auxiliar
+  for (i = 0; i < n; i++)                     //repete até todos os elementos estarem ordenados
+  {
+    for (k = 0; k < n - i - 1; k++)           //ordena um elemento por vez
+    {
+      if (vector[k] > vector[k+1])            //compara o valor do k-ésimo elemento com o do k+1-ésimo
+      {
+        aux = vector[k];
+        vector [k] = vector [k+1];
+        vector [k+1] = aux;                   //se o elemento for menor que o próximo, trocar
+      }
+    }
+  }
 }
 
 #define USAGE "m009 <num1> <nun2> ... \n"

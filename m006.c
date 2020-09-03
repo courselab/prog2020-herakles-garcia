@@ -23,14 +23,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Compute the corss product of vectors 'a' and 'b', 
+/* Compute the cross product of vectors 'a' and 'b', 
    and store the result in vector 'c'. */
 
 void crossprod (int a[3], int b[3], int c[3])
 {
+    c[0]=a[1]*b[2]-a[2]*b[1]; //componente "i" do produto vetorial
+    c[1]=a[2]*b[0]-a[0]*b[2]; //componente "j" do produto vetorial
+    c[2]=a[0]*b[1]-a[1]*b[0]; //componente "k" do produto vetorial
 }
-
-
 
 /* Do not edit this function. */
 
